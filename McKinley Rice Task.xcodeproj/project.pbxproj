@@ -15,6 +15,7 @@
 		C2791B262A6839CB009D0446 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2791B252A6839CB009D0446 /* HTTPHeaders.swift */; };
 		C2791B282A683A1D009D0446 /* Error+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2791B272A683A1D009D0446 /* Error+String.swift */; };
 		C2791B2B2A683A52009D0446 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2791B2A2A683A52009D0446 /* SFSymbols.swift */; };
+		C2791B2D2A684611009D0446 /* StorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2791B2C2A684611009D0446 /* StorageKeys.swift */; };
 		C29189182A66DEC0006AAD0B /* CreateUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29189172A66DEC0006AAD0B /* CreateUserModel.swift */; };
 		C291891A2A6701AF006AAD0B /* CreateNewUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29189192A6701AF006AAD0B /* CreateNewUserView.swift */; };
 		C2E583B12A652F7200D3E523 /* McKinley_Rice_TaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E583B02A652F7200D3E523 /* McKinley_Rice_TaskApp.swift */; };
@@ -44,6 +45,7 @@
 		C2791B252A6839CB009D0446 /* HTTPHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaders.swift; sourceTree = "<group>"; };
 		C2791B272A683A1D009D0446 /* Error+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+String.swift"; sourceTree = "<group>"; };
 		C2791B2A2A683A52009D0446 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
+		C2791B2C2A684611009D0446 /* StorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageKeys.swift; sourceTree = "<group>"; };
 		C29189172A66DEC0006AAD0B /* CreateUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserModel.swift; sourceTree = "<group>"; };
 		C29189192A6701AF006AAD0B /* CreateNewUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewUserView.swift; sourceTree = "<group>"; };
 		C2E583AD2A652F7200D3E523 /* McKinley Rice Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "McKinley Rice Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,7 @@
 				C2791B212A68398D009D0446 /* MRError.swift */,
 				C2791B272A683A1D009D0446 /* Error+String.swift */,
 				C2791B2A2A683A52009D0446 /* SFSymbols.swift */,
+				C2791B2C2A684611009D0446 /* StorageKeys.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				C291891A2A6701AF006AAD0B /* CreateNewUserView.swift in Sources */,
 				C2E583D22A665B6800D3E523 /* Data+Serialization.swift in Sources */,
 				C2E583D62A66614D00D3E523 /* LoginView.swift in Sources */,
+				C2791B2D2A684611009D0446 /* StorageKeys.swift in Sources */,
 				C2791B242A6839AA009D0446 /* HTTPClient.swift in Sources */,
 				C2791B2B2A683A52009D0446 /* SFSymbols.swift in Sources */,
 				C2E583D82A66615400D3E523 /* SignupView.swift in Sources */,

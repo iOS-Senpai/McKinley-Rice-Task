@@ -21,6 +21,7 @@ class LoginViewModel: ObservableObject {
     }
     
     @Published var state: State = .none
+    @AppStorage(StorageKeys.TOKEN) private var saveToken: String = ""
   
     func login() {
         let parameters: [String: Any] = [
@@ -34,6 +35,7 @@ class LoginViewModel: ObservableObject {
                     let login = data.decode(of: LoginModel.self)
                     guard let login = login else { return }
                     self.isLoginSuccessful = !login.token.isEmpty
+                    self.saveToken = login.token
                 case let .failure(error):
                     self.hasLoginError = true
                     self.state = .failure(error)
