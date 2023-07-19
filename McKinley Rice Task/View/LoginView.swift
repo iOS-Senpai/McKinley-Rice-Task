@@ -2,7 +2,7 @@
 //  LoginView.swift
 //  McKinley Rice Task
 //
-//  Created by AB020QU on 2023/07/19.
+//  Created by Pradeep Kumar on 2023/07/19.
 //
 
 import SwiftUI
@@ -61,8 +61,12 @@ struct LoginView: View {
                           
                                 Button("Ok", role: .cancel) { }
                         }, message: { result in
-                            if case let .failure(error) = result {
+                            switch result {
+                            case let .didReceiveData(value):
+                                Text(value)
+                            case let .failure(error):
                                 Text(error.description)
+                            default: Text("Something went wrong.")
                             }
                         })
                         .animation(.easeIn(duration: 0.3), value: vm.isLoginSuccessful)

@@ -2,7 +2,7 @@
 //  SignupView.swift
 //  McKinley Rice Task
 //
-//  Created by AB020QU on 2023/07/19.
+//  Created by Pradeep Kumar on 2023/07/19.
 //
 
 import SwiftUI
@@ -75,11 +75,15 @@ struct SignupView: View {
                     }, message: {
                         Text("Registration successful....!")
                     })
-                    .alert("Error", isPresented: $vm.hasSignupError, actions: {
+                    .alert("Error", isPresented: $vm.hasSignupError, presenting: vm.state,actions: { result in
                         
                         Button("Ok", role: .cancel) { }
-                    }, message: {
-                        Text("Resgistration unsuccssful....")
+                    }, message: { result in
+                        if case let .didReceiveData(value) = result {
+                            Text(value)
+                        } else {
+                            Text("Resgistration unsuccssful....")
+                        }
                     })
                     .animation(.easeIn(duration: 0.3), value: showSignup)
                     .padding()

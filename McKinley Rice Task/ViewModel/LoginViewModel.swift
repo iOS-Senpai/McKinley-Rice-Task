@@ -15,14 +15,14 @@ class LoginViewModel: ObservableObject {
     @Published var hasLoginError = false
     
     enum State {
-        
         case failure(_ error: Error)
+        case didReceiveData(_ value: String)
         case none
     }
     
     @Published var state: State = .none
     @AppStorage(StorageKeys.TOKEN) private var saveToken: String = ""
-  
+    
     func login() {
         let parameters: [String: Any] = [
             "email": email,
@@ -34,8 +34,13 @@ class LoginViewModel: ObservableObject {
                 case let .success(data):
                     let login = data.decode(of: LoginModel.self)
                     guard let login = login else { return }
-                    self.isLoginSuccessful = !login.token.isEmpty
-                    self.saveToken = login.token
+                    if login.token == nil {
+                        self.hasLoginError = true
+                        self.state = .didReceiveData(login.error ?? "")
+                    } else {
+                        self.saveToken = login.token ?? ""
+                        self.isLoginSuccessful = true
+                    }
                 case let .failure(error):
                     self.hasLoginError = true
                     self.state = .failure(error)

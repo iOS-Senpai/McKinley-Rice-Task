@@ -8,5 +8,6 @@
 import Foundation
 
 struct LoginModel: Decodable {
-    let token: String
+    let token: String?
+    let error: String?
 }

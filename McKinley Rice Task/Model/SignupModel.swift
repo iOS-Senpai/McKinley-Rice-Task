@@ -6,6 +6,7 @@
 //
 
 struct SignupModel: Decodable {
-    let id: Int
-    let token: String
+    let id: Int?
+    let token: String?
+    let error: String?
 }

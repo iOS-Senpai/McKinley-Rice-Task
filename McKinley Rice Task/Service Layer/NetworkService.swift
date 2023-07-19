@@ -24,22 +24,25 @@ struct Session: HTTPClient {
             return
         }
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                completion(.failure(.underlyingError(error)))
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse, response.hasStatusCode else {
-                completion(.failure(.invalidReponse))
-                return
-            }
-            
-            guard let unwrappedData = data else {
-                completion(.failure(.invalidData))
-                return
-            }
-            completion(.success(unwrappedData))
+            let mrError = error.map { MRError.underlyingError($0) }
+            let transformedResult = Result(success: data, failure: mrError)
+            completion(transformedResult)
         }
         task.resume()
+    }
+}
+
+// Code cleanup
+
+extension Result {
+    
+    init(success: Success?, failure: Failure?) {
+        if let value = success {
+            self = .success(value)
+        } else if let error = failure {
+            self = .failure(error)
+        } else {
+            fatalError("Couldn't create result....")
+        }
     }
 }
