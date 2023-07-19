@@ -3,7 +3,6 @@
 //  McKinley Rice Task
 //
 //  Created by Pradeep Kumar on 2023/07/17.
-//
 
 import SwiftUI
 
