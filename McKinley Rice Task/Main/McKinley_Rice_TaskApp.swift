@@ -11,7 +11,7 @@ import SwiftUI
 struct McKinley_Rice_TaskApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView()
         }
     }
 }
